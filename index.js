@@ -2,6 +2,7 @@ const discord = require('discord.js')
 const translate = require('@iamtraction/google-translate');
 const client = new discord.Client()
 const prefix = '-'
+require('dotenv').config()
 
 client.once('ready', () => {
     console.log('bot is running')
@@ -18,8 +19,6 @@ client.on('message', message => {
         message.channel.send('LỖI LỖI LỖI,  đm gõ ng* quá éo dịch được, thông cảm!')
         console.error(err);
       });
-
-    
 })
 
-client.login('ODY1ODY1MDYzMDI0ODIwMjM1.YPKNrg.ksBDRj7WfUUinw9RHtvq7rkbR3M')
+client.login(process.env.TOKEN)
